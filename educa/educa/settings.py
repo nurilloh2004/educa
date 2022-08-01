@@ -9,13 +9,13 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+from django.urls import reverse_lazy
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -31,14 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'courses.apps.CoursesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'students.apps.StudentsConfig',
+    
+    
+    'courses',
+    'students',
     'embed_video',
     'memcache_status',
 ]
@@ -139,6 +141,10 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 60 * 15  # 15 minutes
