@@ -191,6 +191,10 @@ class ContentOrderView(CsrfExemptMixin,
 
 
 
+class CourseDetailView(DetailView):
+    model = Course
+    template_name = 'courses/course/detail.html'
+
 class CourseListView(TemplateResponseMixin, View):
     model = Course
     template_name = 'courses/course/list.html'
@@ -209,7 +213,5 @@ class CourseListView(TemplateResponseMixin, View):
                                     
 
 
-class CourseDetailView(DetailView):
-    model = Course
-    template_name = 'courses/course/detail.html'
+
                                         
