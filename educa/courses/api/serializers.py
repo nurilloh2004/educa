@@ -1,6 +1,9 @@
 from rest_framework import serializers
 from ..models import Subject
 from ..models import Course, Module
+from ..models import Content
+
+
 
 
 class ModuleSerializer(serializers.ModelSerializer):
@@ -22,4 +25,13 @@ class CourseSerializer(serializers.ModelSerializer):
         model = Course
         fields = ['id', 'subject', 'title', 'slug', 'overview','created', 'owner', 'modules']
 
+class ItemRelatedField(serializers.RelatedField):
+    def to_representation(self, value):
+        return value.render()
 
+class ContentSerializer(serializers.ModelSerializer):
+    item = ItemRelatedField(read_only=True)
+    
+    class Meta:
+        model = Content
+        fields = ['order', 'item']
