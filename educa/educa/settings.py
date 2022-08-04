@@ -177,3 +177,22 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+
+
+
+
+
+# Braintree settings
+# BRAINTREE_MERCHANT_ID = 'bt4nhf865jthr726'  # Merchant ID
+# BRAINTREE_PUBLIC_KEY = 'mvdtf6cd567nq4kt'   # Public Key
+# BRAINTREE_PRIVATE_KEY = '0bb99e9298908aa32f931f20df5f9e3f'  # Private key
+
+# import braintree
+
+# BRAINTREE_CONF = braintree.Configuration(
+#     braintree.Environment.Sandbox,
+#     BRAINTREE_MERCHANT_ID,
+#     BRAINTREE_PUBLIC_KEY,
+#     BRAINTREE_PRIVATE_KEY
+# )
