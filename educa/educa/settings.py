@@ -42,15 +42,16 @@ INSTALLED_APPS = [
     'embed_video',
     'debug_toolbar',
     'redisboard',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -156,3 +157,10 @@ CACHE_MIDDLEWARE_KEY_PREFIX = 'educa'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+      'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
