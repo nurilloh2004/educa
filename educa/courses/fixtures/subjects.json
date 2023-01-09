@@ -3,29 +3,32 @@
   "model": "courses.subject",
   "pk": 1,
   "fields": {
-    "title": "Math",
-    "slug": "math"
+    "title": "Mathematics",
+    "slug": "mathematics"
   }
 },
 {
-  "model": "courses.course",
-  "pk": 1,
+  "model": "courses.subject",
+  "pk": 2,
   "fields": {
-    "owner": 1,
-    "subject": 1,
-    "title": "Math intro",
-    "slug": "math-intro",
-    "overview": "math intro description",
-    "created": "2023-01-09T16:28:30.096Z"
+    "title": "Music",
+    "slug": "music"
   }
 },
 {
-  "model": "courses.module",
-  "pk": 1,
+  "model": "courses.subject",
+  "pk": 3,
   "fields": {
-    "course": 1,
-    "title": "1",
-    "description": "first description"
+    "title": "Physics",
+    "slug": "physics"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 4,
+  "fields": {
+    "title": "Programming",
+    "slug": "programming"
   }
 }
 ]
